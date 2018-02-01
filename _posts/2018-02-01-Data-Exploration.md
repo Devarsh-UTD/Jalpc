@@ -1,11 +1,11 @@
 ---
 published: false
 ---
-# Data Exploration
+## Data Exploration
 
-We’ll be performing some basic data exploration here and come up with inferences about the data. 
-We’ll try to figure out some irregularities and address them in the next section. 
-We will combine the test and train in order to perform our feature engineering  efficiently and later divide them again.
+### We’ll be performing some basic data exploration here and come up with inferences about the data. 
+### We’ll try to figure out some irregularities and address them in the next section. 
+### We will combine the test and train in order to perform our feature engineering  efficiently and later       divide them again.
 
 Lets start of reading out test and train files into R.
 
@@ -82,8 +82,7 @@ unique_values <- apply(full_data, 2, function(x)length(unique(x)))
               Outlet_Size      Outlet_Location_Type               Outlet_Type         Item_Outlet_Sales 
                         4                         3                         4                      3494 
  ```                      
-This tells us that there are 1559 products and 10 outlets/stores.Another thing that should catch attention is that Item_Type has 16 unique values.
-Let’s explore further using the frequency of different categories in each nominal variable. I’ll exclude the ID and source variables for obvious reasons
+This tells us that there are 1559 products and 10 outlets/stores.Another thing that should catch attention is that Item_Type has 16 unique values. Let’s explore further using the frequency of different categories in each nominal variable. I’ll exclude the ID and source variables for obvious reasons
 ```
 var1 <- sapply(full_data , is.factor)
 cat_var <- full_data[var1]
@@ -122,7 +121,6 @@ The output gives us following observations:
 # Data Cleaning
 
 Herein we would inpute the missing values present in 'Item_Weight'  using rpart package.
-
 ```
 temp1 <- full_data
 temp1 <- subset(temp1, select = - Item_Outlet_Sales)
@@ -135,9 +133,7 @@ colnames(full_data)[colSums(is.na(full_data)) > 0]
 ```
 [1] "Outlet_Size"
 ```
-We have successfully developed a decision tree model using the anova method in rpart  and used it to perform imputations on missing 
-values in the 'Item_Weight' column.
-
+We have successfully developed a decision tree model using the anova method in rpart  and used it to perform imputations on missing values in Item_Weight column.
 I would be using the mice package to perform categorical imputations on 'Outlet_Size'
 ```
 library(mice)
@@ -166,10 +162,8 @@ sqldf('select AVG(Item_Outlet_Sales), Outlet_Type from new group by Outlet_Type 
 3              1197.8155 Supermarket Type2
 4              2215.4753 Supermarket Type3
 ```
-Since there is a significant difference among the different types of  Outlet_Type, we will not combine them
-
+Since there is a significant difference among the different types of  Outlet_Type, we will not combine them.
 We noticed that the minimum value in Item_ Visibility was 0, which makes no practical sense. Lets consider it like missing information and impute it with mean visibility of that product.
-
 ```
 sqldf('select COUNT(Item_Visibility) from new where Item_Visibility = 0 ')
 ```
@@ -185,10 +179,7 @@ sqldf('select COUNT(Item_Visibility) from new where Item_Visibility = 0 ')
            COUNT(Item_Visibility)
 1                      0
 ```
-
-Item_Type variable has 16 categories which might prove to be very useful in analysis. So its a good idea to combine them
-If you look at the Item_Identifier, i.e. the unique ID of each item, it starts with either FD, DR or NC. If you see the categories, these look like being Food, Drinks and Non-Consumables.
-
+Item_Type variable has 16 categories which might prove to be very useful in analysis. So its a good idea to combine them. If you look at the Item_Identifier, i.e. the unique ID of each item, it starts with either FD, DR or NC. If you see the categories, these look like being Food, Drinks and Non-Consumables.
 ```
 get_first_2_char <-sapply(new[,'Item_Identifier'], substring, 1, 2)
 length(get_first_2_char)
@@ -208,9 +199,7 @@ new$Item_Type_Combined <-temp3
 head(new$Item_Type_Combined)
 [1] "Food"           "Drinks"         "Food"           "Food"           "Non-Consumable" "Food"          
 ```
-
-Lets determine the 'Outlet_Establishment_Year' of a store in terms of differences rather than years beacuse it would be more meaningful
-and add a column for 'average item outlet sales'
+Lets determine the 'Outlet_Establishment_Year' of a store in terms of differences rather than years because it would be more meaningful and add a column for 'average item outlet sales'.
 
 ```
 new_full_data['Outlet_Establishment_Year'] <- 2013 - new_full_data$Outlet_Establishment_Year
@@ -244,9 +233,7 @@ Item_Identifier  Item_Weight     Item_Fat_Content Item_Visibility               
                           1230.3984:  14                       Max.   :1673          Baking Goods         :1086  
                           (Other)  :8446                                             (Other)              :5006  
 ```
-
 We noted that 'Item_Fat_Content' had some irregularities because LF,lowfat and Low Fat indicate the same categorical level but have been treated differently in the data set, same goes for 'reg' and 'Regular'. Lets try to combine these levels .
-
 ```
 temp4 <- new_full_data
 
@@ -258,7 +245,6 @@ for(i in 1:nrow(temp4)){
     temp4[i,'Item_Fat_Content'] <- 'Regular'
   }
 }
-
 new_full_data <- temp4
 summary(temp4)
 ```
@@ -362,9 +348,7 @@ Item_Identifier  Item_Weight       Item_Fat_Content Item_Visibility             
                          3rd Qu.:1374         
                          Max.   :1673     
 ```
-Hence we have successfully converted 'Item_Fat_Content' having three factor levels namely Low Fat, Regular and Non-Edible and converted 
-'Item_Type_Combined' into a factor
-Thus we have completed the Data Exploration and cleaning process and made our dataset ready for model building
+Hence we have successfully converted 'Item_Fat_Content' having three factor levels namely Low Fat, Regular and Non-Edible and converted 'Item_Type_Combined' into a factor. Thus we have completed the Data Exploration and cleaning process and made our dataset ready for model building. Let's divide the dataset into training and testing again.
 
 ```
 train <- temp5[which(!temp5$Item_Outlet_Sales == 'None'),]
