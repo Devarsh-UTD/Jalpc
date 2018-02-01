@@ -15,7 +15,7 @@ author:  # change following line to your infomation.
   first_name: Devarsh  # Be used at index page about me section.
   last_name: Patel  # Be used at index page about me section.
   avatar: /static/assets/img/landing/avatar.jpg  # upload your avatar at directory and edit it.
-  github_username: jarrekk  # Leave blank if you don't have now
+  github_username: Devarsh-UTD  # Leave blank if you don't have now
   linkedin_id: jarrekk # Leave blank if you don't have now
   facebook_username: jiakunnj  # Leave blank if you don't have now
   twitter_username: jiakun614  # Leave blank if you don't have now
