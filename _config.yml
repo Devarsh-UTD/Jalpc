@@ -26,8 +26,8 @@ author:  # change following line to your infomation.
     - name: icon-python
     - name: 
   skill_icon2:
+    - name: 
     - name: fa-database
-    - name: fa-code-branch
   desc: Introduce myself will be here.  # Describe yourself.
 
 # comment
