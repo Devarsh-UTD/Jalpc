@@ -5,7 +5,7 @@
   i18n: jalpc
   gh_user: Devarsh-UTD
   repo: Big-Mart-Sales
-  img: /static/assets/img/landing/2018-02-01-your-filename.md
+  img: /static/assets/img/landing/Rlogo.png
   desc: Implemented a predictive model for finding out the sales of each product at a particular store.
 
 - name: Python
