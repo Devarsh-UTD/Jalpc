@@ -3,11 +3,12 @@ published: false
 ---
 # Data Exploration
 
-We’ll be performing some basic data exploration here and come up with some inferences about the data. 
+We’ll be performing some basic data exploration here and come up with inferences about the data. 
 We’ll try to figure out some irregularities and address them in the next section. 
 We will combine the test and train in order to perform our feature engineering  efficiently and later divide them again.
 
-Lets start of reading out test and train files into R
+Lets start of reading out test and train files into R.
+
 ```
 library(xlsx)
 train <- read.xlsx('Train_UWu5bXk.xlsx',sheetIndex = 1)
@@ -16,7 +17,7 @@ library(xlsx)
 temp <- data.frame(Item_Outlet_Sales=rep("None",nrow(test)),test[,])
 full_data <- rbind(train,temp)
 ```
-Lets perform some basic exploratory analysis of full_data
+Lets perform some basic exploratory analysis of full_data.
 ```
 str(full_data)
 ```
@@ -57,20 +58,19 @@ Item_Identifier  Item_Weight     Item_Fat_Content Item_Visibility               
  (Other):4894
  ```
 Some useful observations
-   1) Item_Visibility has a min value of zero. This makes no practical sense because when a product is being sold in a store,
-      the visibility cannot be 0.
-   2) Outlet_Establishment_Years vary from 1985 to 2009. The values might not be apt in this form. Rather, 
+   1. Item_Visibility has a min value of zero. This makes no practical sense because when a product is being       sold in a store, the visibility cannot be 0.
+   2. Outlet_Establishment_Years vary from 1985 to 2009. The values might not be apt in this form. Rather, 
       if we can convert them to how old the particular store is, it should have a better impact on sales.
-   3) The lower ‘count’ of Item_Weight and Item_Outlet_Sales confirms the findings from the missing value check
- Lets check for missing values in the data 
+   3. The lower ‘count’ of Item_Weight and Item_Outlet_Sales confirms the findings from the missing value         check.
+Lets check for missing values in the data.
 ```
 colnames(full_data)[colSums(is.na(full_data)) > 0]
 ```
 ```
 "Item_Weight" "Outlet_Size"
 ```
- Thus we have two columns with missing values, we will impute the missing data in data cleaning section.
- also some of the columns are factor,num and char. Now lets look at the unique values present in each of the categorical columns
+Thus we have two columns with missing values, we will impute the missing data in data cleaning section.
+Now lets look at the unique values present in each of the categorical columns.
 ```
 unique_values <- apply(full_data, 2, function(x)length(unique(x)))
 ```
@@ -114,9 +114,10 @@ $Outlet_Type
 [1] "Supermarket Type1" "Supermarket Type2" "Grocery Store"     "Supermarket Type3"
 ```
 The output gives us following observations:
-*Item_Fat_Content: Some of ‘Low Fat’ values mis-coded as ‘low fat’ and ‘LF’. Also, some of ‘Regular’ are mentioned as ‘regular’.
-*Item_Type: Not all categories have substantial numbers. It looks like combining them can give better results.
-*Outlet_Type: Supermarket Type2 and Type3 can be combined.
+   1. Item_Fat_Content: Some of ‘Low Fat’ values mis-coded as ‘low fat’ and ‘LF’. Also, some of ‘Regular’  
+      are mentioned as ‘regular’.
+   2. Item_Type: Not all categories have substantial numbers. It looks like combining them can give better         results.
+   3. Outlet_Type: Supermarket Type2 and Type3 can be combined.
 
 # Data Cleaning
 
