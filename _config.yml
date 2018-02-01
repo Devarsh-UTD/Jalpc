@@ -28,7 +28,7 @@ author:  # change following line to your infomation.
   skill_icon2:
     - name: 
     - name: fa-database
-  desc: Introduce myself will be here.  # Describe yourself.
+  desc: Highly motivated data analytics and reporting professional with 2.5+ years of experience in programming, reporting, data analysis, statistical analysis and data visualization.  # Describe yourself.
 
 # comment
 disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
