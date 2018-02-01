@@ -6,6 +6,5 @@
 - name: Python
   href: /python/
 
-- name: Linux
-  href: /linux/
-
+- name: R
+  href: /r/
