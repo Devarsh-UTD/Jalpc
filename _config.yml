@@ -24,9 +24,8 @@ author:  # change following line to your infomation.
   # skill icons are on avatar's left and right side. Reference urls are http://fontawesome.io/ and http://fizzed.com/oss/font-mfizz
   skill_icon1:
     - name: icon-python
-    - name: icon-mssql
   skill_icon2:
-    - name: fa-chart-line
+    - name: fa-database
     - name: fa-code-branch
   desc: Introduce myself will be here.  # Describe yourself.
 
