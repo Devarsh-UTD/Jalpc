@@ -19,8 +19,8 @@ author:  # change following line to your infomation.
   linkedin_id: devarsh-patel # Leave blank if you don't have now
   facebook_username:  # Leave blank if you don't have now
   twitter_username:  # Leave blank if you don't have now
-  email: me@jarrekk.com  # Leave blank if you don't have now
-  cv: http://cv.jarrekk.com  # An online CV can be printed as PDF, leave blank if you don't have now
+  email: dxp173530@utdallas.edu  # Leave blank if you don't have now
+  cv:   # An online CV can be printed as PDF, leave blank if you don't have now
   # skill icons are on avatar's left and right side. Reference urls are http://fontawesome.io/ and http://fizzed.com/oss/font-mfizz
   skill_icon1:
     - name: icon-apache
