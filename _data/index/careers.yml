@@ -7,7 +7,7 @@
     detail: I worked at Infosys Ltd, built an offline python appplication used Informatica for integration, MSSQL
     i18n: company_a_desc
   date:
-    detail: Jan. 2017
+    detail: Jan-2017 to Jul-2017
     i18n: company_a_date
   job:
     detail: Business Intelligence Developer
