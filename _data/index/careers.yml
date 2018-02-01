@@ -4,7 +4,7 @@
     detail: Infosys Ltd
     i18n: company_a
   desc:
-    detail: I worked at Infosys Ltd, built an offline python appplication used Informatica for integration, MSSQL
+    detail: Built an offline food appplication in Python. Integrated data using Informatica. Used MSSQL for implementing complex sql queries and IBM Cognos for data visualization.
     i18n: company_a_desc
   date:
     detail: Jan-2017 to Jul-2017
@@ -15,15 +15,15 @@
   icon: fa-plus-square
 
 - name:
-    detail: Company B
+    detail: Parr Infotech
     i18n: company_b
   desc:
-    detail: I worked at Company B ...
+    detail: Implemented machine learning algorithms like decision tree,random forests,gradient boosting and many more in R for performing sound data analysis and getting helpful insights for making informed business decisions  
     i18n: company_b_desc
   date:
-    detail: Jun. 2015
+    detail: Aug-2016 to Dec-2015
     i18n: company_b_date
   job:
-    detail: Full Stack Developer
+    detail: Data Analyst Intern
     i18n: company_b_job
   icon: fa-plus-square
