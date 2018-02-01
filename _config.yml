@@ -2,7 +2,7 @@
 
 # Website settings
 title: Devarsh
-description: Devarsh's blog,use Jekyll and github pages.
+description: Devarsh blog,use Jekyll and github pages.
 keywords: Devarsh,blog,Jekyll,github,gh-pages
 baseurl: /Jalpc # if you have suburl as homepage like '/homepage', please change it to '/homepage' and your repo's name should be 'homepage'
 url: https://Devarsh-UTD.github.io/Jalpc  # url should be 'http://<github_username>.github.io/homepage' as before
