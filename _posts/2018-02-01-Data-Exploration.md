@@ -62,6 +62,7 @@ Some useful observations
       if we can convert them to how old the particular store is, it should have a better impact on sales.
    3. The lower ‘count’ of Item_Weight and Item_Outlet_Sales confirms the findings from the missing value         check.
 Lets check for missing values in the data.
+
 ```
 colnames(full_data)[colSums(is.na(full_data)) > 0]
 ```
