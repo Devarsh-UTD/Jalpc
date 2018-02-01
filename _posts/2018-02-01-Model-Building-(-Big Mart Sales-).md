@@ -1,7 +1,6 @@
 ---
 published: true
 ---
-## Model Building
 
 We will be building a baseline model which will help us in comparing our future models.
 I will be replacing the Item_Outlet_Sales column in test with the average Item_Outlet_Sales of train.
@@ -366,11 +365,3 @@ Since we removed some variables and then built Model_Random_forest_2, we maybe r
 As we can notice that the accuracy of the model improved from 57.96 to 58.07, and the leaderboard score changed to 1175.09758415086 from 
 1309.73748928418. 
 Now the only thing left is to perform cross validation using caret and check if our model can give the same accuracy on unseen data.
-
-
-
-
-
-
-
-
