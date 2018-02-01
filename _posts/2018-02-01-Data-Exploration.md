@@ -118,6 +118,7 @@ The output gives us following observations:
    2. Item_Type: Not all categories have substantial numbers. It looks like combining them can give better         results.
    3. Outlet_Type: Supermarket Type2 and Type3 can be combined.
 
+
 # Data Cleaning
 
 Herein we would inpute the missing values present in 'Item_Weight'  using rpart package.
@@ -147,6 +148,7 @@ colnames(full_data)[colSums(is.na(full_data)) > 0]
 character(0)
 ```
 Hence we have filled the missing values in 'Outlet_Size'
+
 
 # Feature Engineering
 
@@ -248,7 +250,7 @@ for(i in 1:nrow(temp4)){
 new_full_data <- temp4
 summary(temp4)
 ```
-```R
+```
 Item_Identifier  Item_Weight     Item_Fat_Content Item_Visibility                    Item_Type   
  DRA24  :   10   Min.   : 4.555   LF     :   0     Min.   :0.003575   Fruits and Vegetables:2013  
  DRA59  :   10   1st Qu.: 8.600   low fat:   0     1st Qu.:0.033143   Snack Foods          :1989  
