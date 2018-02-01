@@ -10,7 +10,7 @@ url: https://devarsh-utd.github.io/Jalpc  # url should be 'http://<github_userna
 img_path: /Jalpc/static/assets/img/blog  # url should be '/homepage/static/assets/img/blog' as before
 
 # author -- index page "about me" section
-author:  # change following line to your infomation.
+author: Devarsh-UTD  # change following line to your infomation.
   name: GitHub  # Be used at blog posts' author.
   first_name: Hub  # Be used at index page about me section.
   last_name: Git  # Be used at index page about me section.
