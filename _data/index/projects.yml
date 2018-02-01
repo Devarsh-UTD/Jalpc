@@ -6,7 +6,7 @@
   gh_user: Devarsh-UTD
   repo: Big-Mart-Sales
   img: /static/assets/img/landing/jekyll.png
-  desc: This project is my project. I use javescript to get repo's information all my repos have only one request.
+  desc: Implemented a predictive model for finding out the sales of each product at a particular store.
 
 - name: Python
   i18n: cpython
