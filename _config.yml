@@ -1,25 +1,25 @@
 # Welcome to Jekyll!
 
 # Website settings
-title: Devarsh
-description: Devarsh's blog,use Jekyll and github pages.
-keywords: Devarsh,blog,Jekyll,github,gh-pages
-baseurl:  /Jalpc # if you have suburl as homepage like '/homepage', please change it to '/homepage' and your repo's name should be 'homepage'
-url: https://Devarsh-UTD.github.io/Jalpc  # url should be 'http://<github_username>.github.io/homepage' as before
+title:	Devarsh
+description:	Devarsh's blog,use Jekyll and github pages.
+keywords:	Devarsh,blog,Jekyll,github,gh-pages
+baseurl:	/Jalpc # if you have suburl as homepage like '/homepage', please change it to '/homepage' and your repo's name should be 'homepage'
+url:	https://Devarsh-UTD.github.io/Jalpc  # url should be 'http://<github_username>.github.io/homepage' as before
 # url: http://127.0.0.1:4000
-img_path: /Jalpc/static/assets/img/blog  # url should be '/homepage/static/assets/img/blog' as before
+img_path:	/Jalpc/static/assets/img/blog  # url should be '/homepage/static/assets/img/blog' as before
 
 # author -- index page "about me" section
-author: Devarsh Patel  # change following line to your infomation.
-  name: GitHub  # Be used at blog posts' author.
-  first_name: Devarsh  # Be used at index page about me section.
-  last_name: Patel  # Be used at index page about me section.
+author:	Devarsh Patel  # change following line to your infomation.
+  name:	GitHub  # Be used at blog posts' author.
+  first_name:	Devarsh  # Be used at index page about me section.
+  last_name:	Patel  # Be used at index page about me section.
   avatar: /static/assets/img/landing/avatar.jpg  # upload your avatar at directory and edit it.
-  github_username: Devarsh-UTD  # Leave blank if you don't have now
-  linkedin_id: devarsh-patel # Leave blank if you don't have now
+  github_username:	Devarsh-UTD  # Leave blank if you don't have now
+  linkedin_id:	devarsh-patel # Leave blank if you don't have now
   facebook_username:   # Leave blank if you don't have now
   twitter_username:   # Leave blank if you don't have now
-  email: dxp173530@utdallas.edu  # Leave blank if you don't have now
+  email:	dxp173530@utdallas.edu  # Leave blank if you don't have now
   cv:   # An online CV can be printed as PDF, leave blank if you don't have now
   # skill icons are on avatar's left and right side. Reference urls are http://fontawesome.io/ and http://fizzed.com/oss/font-mfizz
   skill_icon1:
@@ -28,7 +28,7 @@ author: Devarsh Patel  # change following line to your infomation.
   skill_icon2:
     - name: fa-linux
     - name: icon-apache
-  desc: Hi my name is devarsh.  # Describe yourself.
+  desc:	Hi my name is devarsh.  # Describe yourself.
 
 # comment
 disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
