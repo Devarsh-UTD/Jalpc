@@ -89,27 +89,26 @@ cat_var <- subset(cat_var, select = - Item_Identifier)
 unique_values1 <- apply(cat_var, 2, unique)
 unique_values1
 ```
-
 ```
-Item_Fat_Content
+$Item_Fat_Content
 [1] "Low Fat" "Regular" "low fat" "LF"      "reg"    
 
-Item_Type
+$Item_Type
  [1] "Dairy"                 "Soft Drinks"           "Meat"                  "Fruits and Vegetables"
  [5] "Household"             "Baking Goods"          "Snack Foods"           "Frozen Foods"         
  [9] "Breakfast"             "Health and Hygiene"    "Hard Drinks"           "Canned"               
 [13] "Breads"                "Starchy Foods"         "Others"                "Seafood"              
 
-Outlet_Identifier
+$Outlet_Identifier
  [1] "OUT049" "OUT018" "OUT010" "OUT013" "OUT027" "OUT045" "OUT017" "OUT046" "OUT035" "OUT019"
 
-Outlet_Size
+$Outlet_Size
 [1] "Medium" NA       "High"   "Small" 
 
-Outlet_Location_Type
+$Outlet_Location_Type
 [1] "Tier 1" "Tier 3" "Tier 2"
 
-Outlet_Type
+$Outlet_Type
 [1] "Supermarket Type1" "Supermarket Type2" "Grocery Store"     "Supermarket Type3"
 ```
 The output gives us following observations:
