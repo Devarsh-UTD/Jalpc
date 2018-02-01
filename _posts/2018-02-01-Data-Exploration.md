@@ -1,7 +1,6 @@
 ---
 published: true
 ---
-## Data Exploration
 
 ### We’ll be performing some basic data exploration here and come up with inferences about the data. 
 ### We’ll try to figure out some irregularities and address them in the next section. 
