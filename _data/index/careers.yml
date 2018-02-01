@@ -4,7 +4,7 @@
     detail: Infosys Ltd
     i18n: company_a
   desc:
-    detail: Built an offline food appplication in Python. Integrated data using Informatica. Used MSSQL for implementing complex sql queries and IBM Cognos for data visualization.
+    detail: Built an offline food delivery appplication in Python. Integrated data using Informatica. Designed complex sql queries in MS SQL and used IBM Cognos for data visualization.
     i18n: company_a_desc
   date:
     detail: Jan-2017 to Jul-2017
