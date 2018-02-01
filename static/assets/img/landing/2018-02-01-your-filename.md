@@ -1,1 +1,1 @@
-![Rlogo.png]({{site.baseurl}}/Rlogo.png)
+![Rlogo.png]({{https://devarsh-utd.github.io/Jalpc/}}/Rlogo.png)
