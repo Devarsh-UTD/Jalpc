@@ -6,7 +6,6 @@
 
 
 - name: Big-Mart-Sales
-  i18n: jalpc
   gh_user: Devarsh-UTD
   repo: Big-Mart-Sales
   img: /static/assets/img/landing/Rlogo.png
