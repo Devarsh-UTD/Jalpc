@@ -141,7 +141,9 @@ library(sandwich) # For White correction
 library(lmtest) # More advanced hypothesis testing tools
 
 ```
+
 coeftest(Model_Linear_1,vcov.=vcov) # Old school t test for significance (like summary)
+
 ```
 t test of coefficients:
 
@@ -163,7 +165,9 @@ Outlet                       2.063716    7.915210  0.2607   0.79431
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 ```
+
 coeftest(Model_Linear_1,vcov.=vcovHC) 
+
 ```
 t test of coefficients:
 
@@ -189,7 +193,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 As we can see the significance did not change while correcting for heteroskedasticity. Hence our model is Homoskedastic. This means the variance of error is constant.
 Lets try to use step wise regreesion and see if we can improve our score on the leaderboard.
 
-```R
+```
 data_linear_test <- read.csv('data_test_python.csv')
 library(RcmdrMisc)
 Model_Linear_stepwise <- stepwise(Model_Linear, direction="backward",criterion = "AIC")
@@ -199,7 +203,7 @@ LinearModelSub_stepwise <- data_linear_test
 write.xlsx(LinearModelSub_stepwise,'C:/Users/devarsh patel/Desktop/New folder/LinearModelSub_stepwise.xlsx')
 summary(Model_Linear_stepwise)
 ```
-```R
+```
 Call:
 lm(formula = Item_Outlet_Sales ~ Item_MRP + Outlet_Establishment_Year + 
     Outlet_Size + Outlet_Type, data = data_linear_train)
@@ -222,13 +226,12 @@ Residual standard error: 1015 on 8518 degrees of freedom
 Multiple R-squared:  0.01874,	Adjusted R-squared:  0.01828 
 F-statistic: 40.66 on 4 and 8518 DF,  p-value: < 2.2e-16
 ```
+
 Our leaderboard score improved from 1790.82081009079 to 1787.94303604482 by using step wise regression because it used variables which were different from Model_Linear_1 based on the optimum AIC value.
 
 Since the accuracy provided by multiple regression and stepwise regression is relatively low lets try to build a regression tree . We dont even have to encode the factor variables as the package(rpart) handles factor variables implicitly. we will first try to build a normal decision tree and then check if we can prune the tree for better accuracy.
 
-
-
-```R
+```
 library(rpart)
 
 train_decision_tree <- train
@@ -238,10 +241,10 @@ Model_Decision_Tree_1 <- rpart(Item_Outlet_Sales ~ . , data = train_decision_tre
 pfit<- prune(Model_Decision_Tree_1, cp=0.010000)
 printcp(pfit)
 ```
-```R
+```
 printcp(Model_Decision_Tree_1)
 ```
-```R
+```
 Regression tree:
 rpart(formula = Item_Outlet_Sales ~ ., data = train_decision_tree, 
     method = "anova")
@@ -264,12 +267,10 @@ n= 8523
 8 0.010000      8   0.41765 0.42647 0.0098994
 
 ```
-We built a regression tree and tried to find the best accuracy which was (1-0.41765) . Pruning of the tree gave us the same result .
-This model works better than the earlier regression models because of the amazing power of classfication algorithms like regreesion trees. Our leaderboard score improved to 1309.73748928418 from 1787.94303604482 
 
+We built a regression tree and tried to find the best accuracy which was (1-0.41765) . Pruning of the tree gave us the same result . This model works better than the earlier regression models because of the amazing power of classfication algorithms like regreesion trees. Our leaderboard score improved to 1309.73748928418 from 1787.94303604482. Lets use ensemble methods like Random Forest in order to avoid overfitting of the data, which is one of the major drawbacks of decision trees.
 
-Lets use ensemble methods like Random Forest in order to avoid overfitting of the data, which is one of the major drawbacks of decision trees.
-```R
+```
 library(randomForest)
 library(doSNOW)
 library(caret)
@@ -314,10 +315,10 @@ Searching right ...
 mtry = 8 	OOB error = 1236811 
 -0.004545236 0.06 
 ```
-I first tried to find the best mtry by giving default ntreeTry and improve parameters , 4 turned out ot be the best mtry beacuse of the minimum OOB error. Then i tried to increase the ntreeTry to 1000 (we dont have to worry about over-fitting and hence we can set this parameter high) and improve to 0.06, but even in this case the mtry turns out to be 4. 
-Hence we will be using mtry = 4 and ntree = 1000 while buidling a random forests model. First we will try to take all the independent variables, after that using the varIMplot function we will filter out the variables which are not contributing towards the models accuarcy
 
-```R
+I first tried to find the best mtry by giving default ntreeTry and improve parameters , 4 turned out ot be the best mtry beacuse of the minimum OOB error. Then i tried to increase the ntreeTry to 1000 (we dont have to worry about over-fitting and hence we can set this parameter high) and improve to 0.06, but even in this case the mtry turns out to be 4. Hence we will be using mtry = 4 and ntree = 1000 while buidling a random forests model. First we will try to take all the independent variables, after that using the varIMplot function we will filter out the variables which are not contributing towards the models accuarcy
+
+```
 library(randomForest)
 library(doSNOW)
 library(caret)
@@ -328,7 +329,7 @@ Model_Random_forest_1 <- randomForest(data_random_forest$Item_Outlet_Sales~., da
 varImpPlot(Model_Random_forest_1)
 Model_Random_forest_1
 ```
-```R
+```
 Call:
  randomForest(formula = data_random_forest$Item_Outlet_Sales ~      ., data = data_random_forest, mtry = 4, ntree = 1000) 
                Type of random forest: regression
@@ -339,17 +340,18 @@ No. of variables tried at each split: 4
                     % Var explained: 57.96
 
 ```
+
 Lets select all the variables except Outlet_Size,category_by_sales and Item_Type, as they are not contributing much towards the accuracy.
 
-```R
+```
 data_random_forest <- subset(data_random_forest,select = - c(Outlet_Size,category_by_sales,Item_Type))
 set.seed(1234)
 Model_Random_forest_2 <- randomForest(data_random_forest$Item_Outlet_Sales~., data = data_random_forest, mtry = 4,ntree = 1000)
 ```
-```R
+```
 Model_Random_forest_2
 ```
-```R
+```
 Call:
  randomForest(formula = data_random_forest$Item_Outlet_Sales ~      ., data = data_random_forest, mtry = 4, ntree = 1000) 
                Type of random forest: regression
@@ -359,6 +361,7 @@ No. of variables tried at each split: 4
           Mean of squared residuals: 1220853
                     % Var explained: 58.07
 ```
+
 Since we removed some variables and then built Model_Random_forest_2, we maybe removed some kind of correlation present among our variables in our data
 As we can notice that the accuracy of the model improved from 57.96 to 58.07, and the leaderboard score changed to 1175.09758415086 from 
 1309.73748928418. 
