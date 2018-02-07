@@ -24,9 +24,11 @@ author:  # change following line to your infomation.
   
   
   skill_icon1:
+    - name: 
     - name: icon-python
   skill_icon2:
     - name: fa-database
+    - name:
   desc: Highly motivated data analytics and reporting professional with 1+ years of experience in programming, data analysis, statistical analysis and data visualization.  # Describe yourself.
 
 # comment
