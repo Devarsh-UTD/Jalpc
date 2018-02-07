@@ -22,7 +22,6 @@ author:  # change following line to your infomation.
   skill_icon1:
   
     - name: icon-python
-    - name: 
   skill_icon2:
   
     - name: fa-database
