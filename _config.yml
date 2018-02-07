@@ -15,13 +15,9 @@ author:  # change following line to your infomation.
   first_name: Devarsh  # Be used at index page about me section.
   last_name: Patel  # Be used at index page about me section.
   avatar: /static/assets/img/landing/Devarsh.png  # upload your avatar at directory and edit it.
-  
-  github_username: Devarsh-UTD  # Leave blank if you don't have now
-  
+  github_username: Devarsh-UTD  # Leave blank if you don't have no
   linkedin_id: devarsh-patel # Leave blank if you don't have now
- 
   email: dxp173530@utdallas.edu  # Leave blank if you don't have now
-  
   
   skill_icon1:
     - name: fa-bug
