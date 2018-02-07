@@ -18,13 +18,14 @@ author:  # change following line to your infomation.
   github_username: Devarsh-UTD  # Leave blank if you don't have no
   linkedin_id: devarsh-patel # Leave blank if you don't have now
   email: dxp173530@utdallas.edu  # Leave blank if you don't have now
+  cv: http://cv.jarrekk.com  # An online CV can be printed as PDF, leave blank if you don't have now
+  # skill icons are on avatar's left and right side. Reference urls are http://fontawesome.io/ and http://fizzed.com/oss/font-mfizz
+  
   
   skill_icon1:
-  
     - name: icon-python
-    - name: 
+    - name: icon-apache
   skill_icon2:
-  
     - name: fa-database
     - name: fa-chart-pie
   desc: Highly motivated data analytics and reporting professional with 1+ years of experience in programming, data analysis, statistical analysis and data visualization.  # Describe yourself.
