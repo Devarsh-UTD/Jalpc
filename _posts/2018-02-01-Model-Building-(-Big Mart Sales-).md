@@ -290,10 +290,10 @@ bestmtry <- tuneRF(predictors,response)
 
 Lets use tuneRF to find the optimal number of variables to select while building a single decision tree in a forests of decision trees
 
-```R
+```
 bestmtry <- tuneRF(predictors,response)
 ```
-```R
+```
 mtry = 4  OOB error = 1285013 
 Searching left ...
 mtry = 2 	OOB error = 1318870 
@@ -302,10 +302,10 @@ Searching right ...
 mtry = 8 	OOB error = 1288806 
 -0.002951793 0.05 
 ```
-```R
+```
 bestmtry <- tuneRF(predictors,response,ntreeTry = 1000,improve = 0.06)
 ```
-```R
+```
 mtry = 4  OOB error = 1231215 
 Searching left ...
 mtry = 2 	OOB error = 1272505 
