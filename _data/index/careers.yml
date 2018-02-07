@@ -5,8 +5,8 @@
     i18n: company_a
   desc:
     detail: • Built an offline food delivery application in Python. 
-			• Integrated data from multiple sources using Informatica. 
-			• Designed complex SQL queries in MS SQL and used IBM Cognos for data visualization
+            • Integrated data from multiple sources using Informatica. 
+            • Designed complex SQL queries in MSSQL and used IBM Cognos for data visualization
 .
     i18n: company_a_desc
   date:
