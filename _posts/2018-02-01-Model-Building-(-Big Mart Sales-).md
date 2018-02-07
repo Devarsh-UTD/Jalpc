@@ -140,9 +140,9 @@ library(sandwich) # For White correction
 library(lmtest) # More advanced hypothesis testing tools
 
 ```
-
+```
 coeftest(Model_Linear_1,vcov.=vcov) # Old school t test for significance (like summary)
-
+```
 ```
 t test of coefficients:
 
@@ -164,9 +164,9 @@ Outlet                       2.063716    7.915210  0.2607   0.79431
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 ```
-
+```
 coeftest(Model_Linear_1,vcov.=vcovHC) 
-
+```
 ```
 t test of coefficients:
 
