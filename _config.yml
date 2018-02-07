@@ -20,8 +20,8 @@ author:  # change following line to your infomation.
   email: dxp173530@utdallas.edu  # Leave blank if you don't have now
   
   skill_icon1:
-    - name: fa-bug
     - name: icon-python
+    - name: 
   skill_icon2:
     - name: fa-database
     - name: fa-chart-pie
