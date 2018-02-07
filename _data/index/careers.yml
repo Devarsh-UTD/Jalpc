@@ -17,7 +17,7 @@
 - name:
     detail: Parr Infotech
     i18n: company_b
-  desc:
+  desc: Hi
     detail: Implemented machine learning algorithms like decision tree,random forests,gradient boosting and many more in R for performing sound data analysis and getting helpful insights from data
     i18n: company_b_desc
   date:
