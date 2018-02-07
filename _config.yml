@@ -27,7 +27,7 @@ author:  # change following line to your infomation.
     - name: icon-apache
   skill_icon2:
     - name: fa-database
-    - name: fa-chart-pie
+    - name: icon-mssql
   desc: Highly motivated data analytics and reporting professional with 1+ years of experience in programming, data analysis, statistical analysis and data visualization.  # Describe yourself.
 
 # comment
